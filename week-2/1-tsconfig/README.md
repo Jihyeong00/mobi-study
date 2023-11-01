@@ -2,7 +2,7 @@
 
 tsconfig 파일은 타입스크립트 파일을 자바스크립트로 컴파일 하는 과정에서의 세부설정이 가능합니다.
 
-## rootOptions
+## 프로젝트 루트 설정
 
 root옵션은 TypeScript 또는 JavaScript 프로젝트가 설정되는 방식과 관련됩니다.
 
@@ -88,7 +88,7 @@ my-monorepo/
 }
 ```
 
-## compilerOptions
+## 컴파일러 설정
 
 컴파일할 때의 세부 설정이 가능합니다.
 
@@ -203,15 +203,13 @@ export const twoPi = valueOfPi * 2;
 
 <br>
 
-### 유형 확인
-
 #### `allowUnreachableCode` :
 
 연결할 수 없는 코드에 대한 설정을 제공합니다.
 
 - `true` : 구문에 도달하지 못하는 코드가 있어도 무시합니다.
 - `false` : 구문에 도달하지 못하는 코드가 있을시에 에러를 나타냅니다.
-  ` `undefined` : 구문에 도달하지 못하는 코드가 있을시에 경고를 나타냅니다.
+- `undefined` : 구문에 도달하지 못하는 코드가 있을시에 경고를 나타냅니다.
 
 ```typescript
 function fn(n: number) {
@@ -231,7 +229,7 @@ function fn(n: number) {
 
 - `true` : 선언되지 않은 변수가 있어도 무시합니다.
 - `false` : 선언되지 않은 변수가 있을 시에 에러를 나타냅니다.
-  ` `undefined` : 선언되지 않은 변수가 있을시에 경고를 나타냅니다.
+- `undefined` : 선언되지 않은 변수가 있을시에 경고를 나타냅니다.
 
 ```typescript
 function verifyAge(age: number) {
@@ -644,7 +642,7 @@ TypeScript가 타입 정의 파일을 찾을 수 있는 디렉토리를 지정�
 
 프로젝트에서 사용할 타입 정의 파일을 명시적으로 지정하는 역할을 합니다. typeRoots와 같이 기본적으로 node_modules/@types 디렉토리에서 타입 정의 파일을 자동으로 찾아 사용하는 기능을 비활성화시키고, 명시적으로 지정된 타입 정의 파일만 사용하도록 설정합니다. 하지만 다른 점은 typeRoots와 같이 특정 폴더를 지정하는 것이 아니라 직접적으로 파일 이름을 나열하는 방식으로 사용합니다.
 
-## Emit
+## 출력 설정
 
 컴파일된 이후에 대한 설정입니다.
 
@@ -800,7 +798,7 @@ TypeScript 컴파일러가 내부(Internal)로 지정된 멤버를 제거하도�
 
 > 내부 멤버란 일반적으로 API 문서화를 위해 사용되지 않는 비공개(private) 멤버나 내부 구현을 위한 멤버를 말합니다.
 
-## 자바스크립트
+## 자바스크립트 설정
 
 자바스크립트에 관련된 세팅입니다.
 
@@ -823,7 +821,7 @@ module.exports.pi = parseFloat(3.142);
 
 TypeScript 컴파일러가 Node.js 모듈의 .js 파일을 재귀적으로 탐색하는 깊이(depth)의 최대값을 지정하는 옵션입니다. 이 옵션은 주로 프로젝트의 모듈 구조가 복잡하고 깊게 중첩된 경우에 사용됩니다.
 
-## 편집 지원
+## 편집기 지원 설정
 
 #### `disableSizeLimit` :
 
@@ -845,7 +843,9 @@ typescript-eslint-language-service — 컴파일러 출력 내부에 eslint 오�
 ts-graphql-plugin — GraphQL 쿼리 템플릿 문자열 내에서 검증 및 자동 완성을 제공합니다.
 ```
 
-## 상호운용성 제약
+## 상호운용성 제약 설정
+
+#### `allowSyntheticDefaultImportstrue` :
 
 TypeScript 컴파일러가 import 문에서 default import를 합성할 수 있는지 여부를 지정하는 옵션입니다.
 
@@ -964,7 +964,7 @@ Type '{ x: number; y: number; m: number; }' is not assignable to type 'Point'.
 
 객체에 대한 인덱스 접근에 암묵적으로 any 타입으로 접근하였을 때 에러를 무시할 수 있습니다. 위험한 방법이므로 `@ts-ignore`를 사용하는 것이 좋습니다.
 
-## 언어와 환경에 대한 설정
+## 언어와 환경 설정
 
 #### `jsx` :
 
@@ -1152,7 +1152,7 @@ class Example {
 
 반면에 useDefineForClassFields 옵션이 false로 설정되어 있다면, 클래스 필드인 field3는 생성자 내에서 일반적인 변수 선언 방식으로 초기화됩니다. 이 경우 클래스 인스턴스가 생성될 때마다 생성자 내에서 필드를 초기화해야 합니다.
 
-## 컴파일 검사
+## 컴파일 설정
 
 #### `diagnostics` :
 
