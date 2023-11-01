@@ -27,7 +27,6 @@ tsconfig.path.json
       "@/*": ["src/*"],
       "@apis/*": ["src/apis/*"],
       "@assets/*": ["src/assets/*"],
-      ...
 
 ```
 
@@ -444,8 +443,10 @@ try {
   },
   "include": ["./src/**/*.ts"]
 }
+```
 
-import { TodoList } from "./todo";
+```typescript
+import { TodoList } from './todo';
 ```
 
 #### `moduleResolution` :
@@ -466,8 +467,9 @@ import { TodoList } from "./todo";
 
 모듈 이름의 파일 확장자를 지정하는데 사용됩니다. 이 옵션을 사용하면 모듈 이름 뒤에 특정 확장자를 자동으로 추가할 수 있습니다.
 
+CommonJS 모듈 형식을 사용하면서 모듈 이름뒤에 js, ts 확장자를 자동으로 붙입니다.
+
 ```json
-// CommonJS 모듈 형식을 사용하면서 모듈 이름뒤에 js, ts 확장자를 자동으로 붙입니다.
 {
   "compilerOptions": {
     "module": "CommonJS",
@@ -499,8 +501,10 @@ import * as todo from './todo';
 ```
 
 ```typescript
-import { SomeModule } from '@type/todo'; // 실제로는 "src/type/todo"을 가져옴
+import { SomeModule } from '@type/todo';
 ```
+
+실제로는 "src/type/todo"을 가져옵니다.
 
 #### `resolveJsonModule` :
 
@@ -527,9 +531,9 @@ package.json
     "./bar": "./src/bar.js"
   }
 }
-
-// 컴파일러가 ./foo 모듈을 실제로 ./src/foo.js 파일로 가져오게 만듭니다.
 ```
+
+컴파일러가 ./foo 모듈을 실제로 ./src/foo.js 파일로 가져오게 만듭니다.
 
 #### `resolvePackageJsonImports` :
 
@@ -542,22 +546,24 @@ package.json 파일의 imports 필드는 모듈의 다양한 경로를 정의하
     "another-library": "./src/another-library.js"
   }
 }
-
-// 이 설정은 컴파일러가 import { someFunction } from "some-library"를 실제로 ./src/some-library.js 파일로 해석하게 만듭니다.
 ```
+
+이 설정은 컴파일러가 import { someFunction } from "some-library"를 실제로 ./src/some-library.js 파일로 해석하게 만듭니다.
 
 #### `rootDir` :
 
 프로젝트 내에서 TypeScript 소스 파일이 위치한 최상위 디렉토리를 지정하는 옵션입니다. TypeScript 컴파일러가 소스 파일이 있는 디렉토리를 명시적으로 설정할 수 있습니다.
 
-```sass
+```json
 {
   "compilerOptions": {
     "rootDir": "./src"
   },
   "include": ["./src/**/*.ts"]
 }
+```
 
+```sass
 kkiri
   ├── tsconfig.json (루트 프로젝트의 설정)
   ├── src
