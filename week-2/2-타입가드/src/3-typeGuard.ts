@@ -4,6 +4,7 @@
     age: number;
     isMale: boolean;
     haveDream: boolean;
+    isHappy: boolean;
   }
 
   interface AnimalType {
@@ -19,12 +20,14 @@
       age: 25,
       isMale: true,
       haveDream: true,
+      isHappy: true,
     },
     {
       name: 'Lucy',
       age: 30,
       isMale: false,
       haveDream: true,
+      isHappy: true,
     },
     {
       name: 'Max',
@@ -46,7 +49,34 @@
 
   for (let i in data) {
     if (typeGuard1(data[i])) {
-      console.log(data[i].haveDream, data[i].name);
+      const humanData = data[i] as UserType;
+      console.log(humanData.isHappy);
+    } else {
+      console.log(data[i].name);
+    }
+  }
+
+  const typeGuard2 = (item: UserType | AnimalType): item is UserType => {
+    return 'isHappy' in item;
+  };
+
+  for (let i in data) {
+    if (typeGuard2(data[i])) {
+      const humanData = data[i] as UserType;
+      console.log(humanData.isHappy);
+    } else {
+      console.log(data[i].name);
+    }
+  }
+
+  const typeGuard3 = (item: UserType | AnimalType): item is UserType => {
+    return (item as UserType).isHappy !== undefined;
+  };
+
+  for (let i in data) {
+    if (typeGuard3(data[i])) {
+      const humanData = data[i] as UserType;
+      console.log(humanData.isHappy);
     } else {
       console.log(data[i].name);
     }
