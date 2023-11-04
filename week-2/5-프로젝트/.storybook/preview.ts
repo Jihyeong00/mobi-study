@@ -1,4 +1,8 @@
 import type { Preview } from "@storybook/react";
+import "../src/index.css";
+import {mswServer} from "../src/__mock__/browser";
+
+mswServer()
 
 const preview: Preview = {
   parameters: {

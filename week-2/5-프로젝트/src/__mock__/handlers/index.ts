@@ -1,5 +1,5 @@
 import { HttpHandler } from 'msw';
-import todoApi from '@mock/handlers/todo.api.ts';
+import userApi from '@mock/handlers/user.api.ts';
 
 type HandlersArray = HttpHandler[];
 
@@ -11,5 +11,5 @@ const setHandlers = (handlersArray: HandlersArray[]) => {
   return handler;
 };
 
-const handler = setHandlers([todoApi]);
+const handler = setHandlers([userApi]);
 export default handler;
