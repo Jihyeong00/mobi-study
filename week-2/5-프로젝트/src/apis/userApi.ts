@@ -6,11 +6,11 @@ const fetcher = (url: string) => {
 }
 
 export const useLogin = () => {
-    const {data, error} = useSWR<IUserType>('/login', fetcher);
-    return {data, error}
+    const {data, error, mutate} = useSWR<IUserType>('/login', fetcher);
+    return {data, error, mutate}
 };
 
 export const useLogOut = () => {
-    const {data, error} = useSWR<IUserType>('/logout', fetcher);
-    return {data, error}
+    const {data, error, mutate} = useSWR<IUserType>('/logout', fetcher);
+    return {data, error, mutate}
 };

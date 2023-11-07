@@ -1,9 +1,5 @@
 import {create} from 'zustand';
-
-interface IUserInfo {
-    profile: string;
-    userName: string;
-}
+import {IUserInfo} from "@type/user.type.ts";
 
 interface IUserStore {
     isLogin: boolean;
