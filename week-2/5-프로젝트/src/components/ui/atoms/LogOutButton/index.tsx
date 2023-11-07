@@ -1,19 +1,14 @@
 import {useUserStore} from "@store/user.ts";
 import {useLogOut} from "@apis/userApi.ts";
-import {getErrorMessage} from "../../../../util/error.ts";
 
 const LogOutButton = () => {
   const {userInfo, setUserStatus} = useUserStore(state => state)
   const {data, mutate, error} = useLogOut()
 
   const onClick = async () => {
-    try {
       await mutate()
       if(error) throw new Error("로그아웃에 실패하였습니다.")
       setUserStatus(data!)
-    }catch (err:unknown){
-      throw new Error(getErrorMessage(err))
-    }
   }
 
   return (
