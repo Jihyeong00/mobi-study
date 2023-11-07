@@ -1,11 +1,16 @@
-import { IUserType } from '@type/user.type.ts';
+import {IUserType} from '@type/user.type.ts';
+import useSWR from "swr";
 
-export const loginFetcher = async (): Promise<IUserType> => {
-  const res = await fetch('/login');
-  return await res.json();
+const fetcher = (url: string) => {
+    return fetch(url).then(r => r.json())
+}
+
+export const useLogin = () => {
+    const {data, error} = useSWR<IUserType>('/login', fetcher);
+    return {data, error}
 };
 
-export const logOutFetcher = async (): Promise<IUserType> => {
-  const res = await fetch('/logout');
-  return await res.json();
+export const useLogOut = () => {
+    const {data, error} = useSWR<IUserType>('/logout', fetcher);
+    return {data, error}
 };

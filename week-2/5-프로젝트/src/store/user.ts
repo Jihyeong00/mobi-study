@@ -1,27 +1,20 @@
-import { create } from 'zustand';
-import { loginFetcher, logOutFetcher } from '@apis/userApi.ts';
+import {create} from 'zustand';
 
-interface IUserStore {
-  isLogin: boolean;
-  userInfo?: {
+interface IUserInfo {
     profile: string;
     userName: string;
-  };
-  login: () => void;
-  logout: () => void;
+}
+
+interface IUserStore {
+    isLogin: boolean;
+    userInfo?: IUserInfo
+    setUserStatus: (userInfo: { isLogin: boolean, userInfo: IUserInfo }) => void
 }
 
 export const useUserStore = create<IUserStore>((set) => ({
-  isLogin: false,
-  userInfo: undefined,
-  login: async () => {
-    const response = await loginFetcher();
-    const { isLogin, userInfo } = response;
-    set({ isLogin: isLogin, userInfo });
-  },
-  logout: async () => {
-    const response = await logOutFetcher();
-    const { isLogin, userInfo } = response;
-    set({ isLogin: isLogin, userInfo });
-  },
+    isLogin: false,
+    userInfo: undefined,
+    setUserStatus: ({isLogin, userInfo}) => {
+        set({isLogin, userInfo});
+    }
 }));
