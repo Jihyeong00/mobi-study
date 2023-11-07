@@ -6,7 +6,7 @@ export type ButtonProps = {
 const Button = (props: ButtonProps) => (
   <button
     onClick={props.onClick}
-    className={`rounded-md  flex w-[60px] p-button ${
+    className={`rounded-md  flex p-button ${
       props.used ? `bg-primary-100 text-[#154FEF]` : `bg-white text-[#667085]`
     }`}
   >

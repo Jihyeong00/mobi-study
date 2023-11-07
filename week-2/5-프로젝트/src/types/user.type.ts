@@ -1,9 +1,12 @@
-export interface IUserInfo {
+interface IUserInfo {
   profile: string;
   userName: string;
 }
 
-export interface IUserType {
+interface IUserType {
   isLogin: false;
   userInfo: IUserInfo
 }
+
+
+export type {IUserType, IUserInfo}
