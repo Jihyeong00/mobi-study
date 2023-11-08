@@ -1,9 +1,7 @@
 import {IUserType} from '@type/user.type.ts';
 import useSWR from "swr";
+import {fetcher} from "@apis/apis.ts";
 
-const fetcher = (url: string) => {
-    return fetch(url).then(r => r.json())
-}
 
 export const useLogin = () => {
     const {data: loginData, error: loginError, mutate: loginAction} = useSWR<IUserType>('/login', fetcher);

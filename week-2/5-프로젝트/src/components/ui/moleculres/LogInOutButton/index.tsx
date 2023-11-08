@@ -1,4 +1,4 @@
-import {useLogin, useLogOut} from "@apis/userApi.ts";
+import {useLogin, useLogOut} from "@apis/user.api.ts";
 import {useUserStore} from "@store/user.ts";
 import Button from "@components/ui/atoms/Button";
 
