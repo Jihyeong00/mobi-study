@@ -1,3 +1,12 @@
+## SSR, SSR, SSG, ISR의 Next에서의 사용법을 정리합니다.
+
+### 목차
+
+1. [CSR](#CSR)
+2. [SSR](#SSR)
+3. [SSG](#SSG)
+4. [ISR](#ISR)
+
 ## CSR
 
 CSR (Client Side Rendering)은 클라이언트측 렌더링이라고 부릅니다.
