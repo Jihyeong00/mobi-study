@@ -12,7 +12,7 @@ Next-JS의 [공식 홈페이지](https://nextjs.org/)에 가면 다음과 같은
 
 > The React Framework for the Web
 
-웹을 위한 리액트 프레임워크이다. 라우트시스템을 알기 전 Framework워크에 대해 알고가면 좋을 것 같아 작성하게 되었습니다.
+웹을 위한 리액트 프레임워크이다. 라우트시스템을 알기 전 Framework에 대해 알고가면 좋을 것 같아 작성하게 되었습니다.
 
 <p align="center">
     <img src ="./img/frameWork.png" width=700 height=300>
