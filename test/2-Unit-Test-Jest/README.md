@@ -142,7 +142,7 @@ description("Lotto 생성 테스트", () => {
 		// when
         const result = new Lotto(input);
         
-        //then
+        // then
         expect(result).toBe(expected);
       },
     );
