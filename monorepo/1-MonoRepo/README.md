@@ -3,7 +3,7 @@
 ### MonoRepo란?
 
 <p align="center">
-    <img src ="./img/monolith.png" width=700>
+    <img src ="./img/monorepo.png" width=700>
 </p>
 
 [사진출처](https://engineering.linecorp.com/ko/blog/monorepo-with-turborepo)
